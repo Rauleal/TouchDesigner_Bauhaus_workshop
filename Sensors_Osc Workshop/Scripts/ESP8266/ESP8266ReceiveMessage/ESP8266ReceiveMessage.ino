@@ -28,13 +28,13 @@
 --------------------------------------------------------------------------------------------- */
 
 
-//char ssid[] = "ccu";          // your network SSID (name)
-//char pass[] = "Code03084";    // your network password
+char ssid[] = "ccu";          // your network SSID (name)
+char pass[] = "Code03084";    // your network password
 
 
 // A UDP instance to let us send and receive packets over UDP
 WiFiUDP Udp;
-const IPAddress outIp(192, 168, 178, 44);  // remote IP (not needed for receive)
+const IPAddress outIp(172, 131, 21, 111);  // remote IP (not needed for receive)
 const unsigned int outPort = 9999;         // remote port (not needed for receive)
 const unsigned int localPort = 8888;       // local port to listen for UDP packets (here's where we send the packets)
 
@@ -56,6 +56,8 @@ float ledState = 0;  // LOW means led is *on*
 
 void setup() {
   pinMode(BUILTIN_LED, OUTPUT);
+  pinMode(D2, OUTPUT);
+  
   digitalWrite(BUILTIN_LED, ledState);  // turn *on* led
 
   Serial.begin(115200);
@@ -118,6 +120,7 @@ void loop() {
 void led(OSCMessage &msg) {
   int ledStateINT = int(msg.getFloat(0)); //transform to the right format
   digitalWrite(BUILTIN_LED, ledState);
+  digitalWrite(D2, ledState);
   Serial.print("/led: ");
   Serial.println(ledStateINT);
 }

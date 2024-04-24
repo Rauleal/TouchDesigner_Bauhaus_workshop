@@ -24,15 +24,14 @@ const unsigned int BAUD_RATE = 9600;
 
 //OSC communication set up
 
-char ssid[] = "Ziggo3781173";  // your network SSID (name)
-char pass[] = "yhct4zrGztxg";  // your network password
 
-//char ssid[] = "ccu";          // your network SSID (name)
-//char pass[] = "Code03084";    // your network password
+
+char ssid[] = "ccu";          // your network SSID (name)
+char pass[] = "Code03084";    // your network password
 
 
 WiFiUDP Udp;                               // A UDP instance to let us send and receive packets over UDP
-const IPAddress outIp(192, 168, 178, 44);  // remote IP of your computer
+const IPAddress outIp(172, 31, 21, 139);  // remote IP of your computer
 const unsigned int outPort = 8000;         // remote port to receive OSC
 const unsigned int localPort = 9000;       // local port to listen for OSC packets (actually not used for sending)
 
