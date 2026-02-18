@@ -21,7 +21,7 @@ void loop() {
   if (duration == 0) {
     //Serial.println(300);
     //Serial.println("Warning: no pulse from sensor");
-    Serial.println("NaN");
+    Serial.println("0");
   }
   else {
     // Serial.print("distance to nearest object:");

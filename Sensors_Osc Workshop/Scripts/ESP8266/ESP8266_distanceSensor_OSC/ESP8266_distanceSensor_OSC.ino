@@ -26,14 +26,14 @@ const unsigned int BAUD_RATE = 9600;
 
 
 
-char ssid[] = "ccu";          // your network SSID (name)
-char pass[] = "Code03084";    // your network password
+char ssid[] = "Club_Tanker_by_Loads";          // your network SSID (name)
+char pass[] = "ClubTanker2023!";    // your network password
 
 
 WiFiUDP Udp;                               // A UDP instance to let us send and receive packets over UDP
-const IPAddress outIp(172, 31, 21, 139);  // remote IP of your computer
-const unsigned int outPort = 8000;         // remote port to receive OSC
-const unsigned int localPort = 9000;       // local port to listen for OSC packets (actually not used for sending)
+const IPAddress outIp(192, 168, 178, 48);  // remote IP of your computer
+const unsigned int outPort = 9005;         // remote port to receive OSC
+const unsigned int localPort = 8000;       // local port to listen for OSC packets (actually not used for sending)
 
 void setup() {
   Serial.begin(115200);
@@ -90,7 +90,7 @@ void loop() {
   if (duration == 0) {
     //Serial.println(300);
     //Serial.println("Warning: no pulse from sensor");
-    Serial.println("NaN");
+    Serial.println("0");
   } else {
     // Serial.print("distance to nearest object:");
     //Serial.println(distance);
